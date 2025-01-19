@@ -367,19 +367,24 @@
 
         if (shortLink) {
           try {
-            // Send data to /api/create-link.js
+            // Create FormData object
+            const formData = new FormData();
+            formData.append("longUrl", longUrl);
+            formData.append("customAlias", customAlias);
+            formData.append("shortLink", shortLink);
+            formData.append(
+              "ipAddress",
+              document.getElementById("ipAddress").value
+            );
+            formData.append(
+              "location",
+              document.getElementById("location").value
+            );
+
+            // Send FormData to /api/create-link.js
             const response = await fetch("/api/create-link.js", {
               method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({
-                longUrl,
-                customAlias,
-                shortLink,
-                ipAddress: document.getElementById("ipAddress").value,
-                location: document.getElementById("location").value,
-              }),
+              body: formData,
             });
 
             const result = await response.json();
@@ -398,6 +403,16 @@
                 text: result.message || "There was an issue creating the link.",
               });
             }
+
+            // Copy the short link to clipboard
+            navigator.clipboard.writeText(shortLink).then(() => {
+              Swal.fire({
+                icon: "success",
+                title: "Link copied to clipboard!",
+                showConfirmButton: false,
+                timer: 1500,
+              });
+            });
           } catch (error) {
             Swal.fire({
               icon: "error",
@@ -406,16 +421,6 @@
             });
             console.error("Error sending data to API:", error);
           }
-
-          // Copy the short link to clipboard
-          navigator.clipboard.writeText(shortLink).then(() => {
-            Swal.fire({
-              icon: "success",
-              title: "Link copied to clipboard!",
-              showConfirmButton: false,
-              timer: 1500,
-            });
-          });
         } else {
           Swal.fire({
             icon: "error",

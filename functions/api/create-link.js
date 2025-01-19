@@ -1,12 +1,12 @@
 export async function onRequestPost(context) {
   try {
-    // Grab data from the form or request body
-    const formdata = await context.request.json();
-    const longUrl = formdata.longUrl;
-    const customAlias = formdata.customAlias;
-    const shortLink = formdata.shortLink;
-    const ipAddress = formdata.ipAddress;
-    const location = formdata.location;
+    // Grab data from the form (FormData)
+    const formData = await context.request.formData();
+    const longUrl = formData.get("longUrl");
+    const customAlias = formData.get("customAlias");
+    const shortLink = formData.get("shortLink");
+    const ipAddress = formData.get("ipAddress");
+    const location = formData.get("location");
 
     // Log the values to ensure they are being retrieved correctly
     console.log("Long URL:", longUrl);
