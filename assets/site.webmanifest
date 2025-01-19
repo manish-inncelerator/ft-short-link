@@ -1,0 +1,21 @@
+{
+  "name": "Url Shortner",
+  "short_name": "f-t.co",
+  "description": "Url Shortner a fast and reliable URL shortener service that helps you shorten long URLs for easier sharing. Create custom short links for your business or personal use.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "https://f-t.co/assets/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://f-t.co/assets/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

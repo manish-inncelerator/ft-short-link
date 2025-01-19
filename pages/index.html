@@ -3,22 +3,93 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FT Links</title>
+    <title>Url Shortner | Inncelerator</title>
+    <!-- Meta Description -->
+    <meta
+      name="description"
+      content="Url Shortner a fast and reliable URL shortener service that helps you shorten long URLs for easier sharing. Create custom short links for your business or personal use."
+    />
+
+    <!-- Meta Keywords -->
+    <meta
+      name="keywords"
+      content="URL shortener, link shortener, shorten links, custom short links, fast URL shortener, create short links, f-t.co, fayyaz travels, inncelerator"
+    />
+
+    <!-- Open Graph Meta Tags (for social media sharing) -->
+    <meta property="og:title" content="Url Shortner | Inncelerator" />
+    <meta
+      property="og:description"
+      content="Url Shortner a fast and reliable URL shortener service that helps you shorten long URLs for easier sharing. Create custom short links for your business or personal use."
+    />
+    <meta property="og:image" content="../assets/f-t_logo.png" />
+    <meta property="og:url" content="https://f-t.co" />
+    <meta property="og:type" content="website" />
+
+    <meta name="twitter:title" content="Url Shortner | Inncelerator" />
+    <meta
+      name="twitter:description"
+      content="Url Shortner a fast and reliable URL shortener service that helps you shorten long URLs for easier sharing. Create custom short links for your business or personal use."
+    />
+    <meta name="twitter:image" content="../assets/f-t_logo.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Canonical Link (prevents duplicate content issues) -->
+    <link rel="canonical" href="https://f-t.co" />
+
+    <!-- Favicon for browser -->
+    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon" />
+
+    <!-- Favicon for Android Chrome (192x192) -->
+    <link
+      rel="icon"
+      sizes="192x192"
+      href="../assets/android-chrome-192x192.png"
+    />
+
+    <!-- Apple Touch Icon (180x180) -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../assets/apple-touch-icon-180x180.png"
+    />
+
+    <!-- For higher resolution devices (optional) -->
+    <link rel="icon" sizes="32x32" href="../assets/favicon-32x32.png" />
+    <link rel="icon" sizes="16x16" href="../assets/favicon-16x16.png" />
+
+    <!-- Web App Manifest (optional for PWA) -->
+    <link rel="manifest" href="../assets/site.webmanifest" />
+
+    <!-- Robots Meta Tag (for controlling search engine indexing) -->
+    <meta name="robots" content="index, follow" />
+
+    <!-- Author Meta Tag -->
+    <meta name="author" content="Inncelerator" />
+
+    <!-- Language Meta Tag -->
+    <meta name="language" content="English" />
     <style>
       body {
-        font-family: Arial, sans-serif;
+        font-family: "Poppins", sans-serif;
         margin: 0;
         padding: 0;
         display: flex;
         flex-direction: column;
         min-height: 100vh;
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb);
+        color: #333;
       }
 
       header {
-        background-color: #007bff;
-        color: #fff;
-        padding: 1rem;
+        background: #fff;
+        color: #555;
+        padding: 1.5rem 1rem;
         text-align: center;
+        font-size: 2rem;
+        font-weight: bold;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        letter-spacing: 1.5px;
       }
 
       main {
@@ -26,69 +97,170 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 1rem;
+        padding: 2rem;
       }
 
       .form-container {
         max-width: 400px;
         width: 100%;
-        background: #f9f9f9;
-        padding: 2rem;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        background: linear-gradient(135deg, #ffffff, #f3f3f3);
+        padding: 3rem;
+        border-radius: 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        position: relative;
+      }
+
+      .form-container::before {
+        content: "";
+        position: absolute;
+        top: -15px;
+        left: -15px;
+        right: -15px;
+        bottom: -15px;
+        background: linear-gradient(135deg, #ff758c, #ff7eb3);
+        border-radius: 35px;
+        z-index: -1;
       }
 
       .form-container h2 {
-        margin-bottom: 1rem;
-        text-align: center;
-        color: #333;
+        margin-bottom: 2rem;
+        color: #000;
+        font-size: 2rem;
+        font-weight: 700;
       }
 
       .form-container label {
         display: block;
         margin-bottom: 0.5rem;
-        font-weight: bold;
+        font-weight: 600;
+        color: #555;
+        text-align: left;
       }
 
       .form-container input {
         width: 100%;
-        padding: 0.5rem;
-        margin-bottom: 1rem;
-        border: 1px solid #ccc;
-        border-radius: 4px;
+        box-sizing: border-box;
+        padding: 0.75rem;
+        margin-bottom: 1.5rem;
+        border: none;
+        border-radius: 12px;
+        font-size: 1rem;
+        background: #f9f9f9;
+        box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1),
+          inset -2px -2px 5px rgba(255, 255, 255, 0.5);
+        transition: all 0.3s;
+      }
+
+      .form-container input:focus {
+        background: #fff;
+        outline: none;
+        box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2),
+          inset -2px -2px 5px rgba(255, 255, 255, 0.7);
       }
 
       .form-container button {
         width: 100%;
         padding: 0.75rem;
-        background-color: #007bff;
+        background: linear-gradient(135deg, #6c63ff, #7a5cff);
         color: white;
         border: none;
-        border-radius: 4px;
+        border-radius: 12px;
         font-size: 1rem;
+        font-weight: bold;
         cursor: pointer;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        transition: transform 0.2s;
       }
 
       .form-container button:hover {
-        background-color: #0056b3;
+        transform: translateY(-3px);
+      }
+
+      .form-container button:active {
+        transform: translateY(0);
       }
 
       footer {
-        background-color: #333;
-        color: #fff;
+        background-color: #1f2937;
+        color: #9ca3af;
         text-align: center;
         padding: 1rem;
+        font-size: 0.9rem;
+        box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      footer a {
+        color: #6c63ff;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+      }
+      hr {
+        border: none;
+        height: 2px;
+        background: linear-gradient(to right, #ff7e5f, #feb47b);
+        margin: 20px 0;
+        position: relative;
+      }
+
+      hr::before {
+        content: "";
+        position: absolute;
+        top: -8px;
+        left: 50%;
+        width: 50px;
+        height: 8px;
+        background-color: #fff;
+        border-radius: 5px;
+        transform: translateX(-50%);
+      }
+      #short_link {
+        pointer-events: none; /* Disables mouse interaction */
+        user-select: none; /* Prevents text selection */
+        background-color: #f9f9f9; /* Optional: keeps the background consistent with other inputs */
       }
     </style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <header>
-      <h1>FT Links</h1>
+    <header
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+      "
+    >
+      <img
+        src="../assets/f-t_logo.png"
+        alt="Url Shortner"
+        style="width: 150px; height: auto"
+      />
+
+      <!-- Powered by text and Inncelerator logo -->
+      <div style="display: flex; align-items: center; gap: 10px">
+        <span style="font-size: 0.8rem; color: #555">powered by</span>
+        <a href="https://inncelerator.com"
+          ><img
+            src="../assets/inncelerator_logo.png"
+            alt="Inncelerator Logo"
+            style="width: 150px; height: auto"
+        /></a>
+      </div>
     </header>
+
     <main>
       <div class="form-container">
-        <h2>Create Short Link</h2>
-        <form id="shortLinkForm">
+        <h2>🔗 Create Short Link</h2>
+        <form id="shortLinkForm" style="margin-bottom: 20px !important">
           <label for="longUrl">Long URL:</label>
           <input
             type="url"
@@ -108,50 +280,154 @@
 
           <input type="hidden" id="ipAddress" name="ipAddress" />
           <input type="hidden" id="location" name="location" />
+          <input
+            type="text"
+            id="short_link"
+            name="short_link"
+            disabled
+            readonly
+          />
 
-          <button type="submit">Generate Short Link</button>
+          <button type="button" id="copyButton">Copy Link</button>
         </form>
       </div>
     </main>
     <footer>
-      <p>&copy; 2025 Powered by Inncelerator</p>
+      <p>
+        2025 &copy;
+        <a href="https://inncelerator.com" target="_blank">Inncelerator</a>
+      </p>
     </footer>
-
+    <!-- SweetAlert2 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-      async function getIpAndLocation() {
+      document.addEventListener("DOMContentLoaded", async () => {
         try {
-          const response = await fetch("https://ipapi.co/json/");
+          const response = await fetch("https://freeipapi.com/api/json/");
           const data = await response.json();
 
-          document.getElementById("ipAddress").value = data.ip;
-          document.getElementById(
-            "location"
-          ).value = `${data.city}, ${data.region}, ${data.country_name}`;
+          if (
+            data &&
+            data.ipAddress &&
+            data.cityName &&
+            data.regionName &&
+            data.countryName
+          ) {
+            document.getElementById("ipAddress").value = data.ipAddress;
+            document.getElementById(
+              "location"
+            ).value = `${data.cityName}, ${data.regionName}, ${data.countryName}`;
+          }
         } catch (error) {
           console.error("Error fetching IP and location:", error);
         }
-      }
+      });
 
-      document.addEventListener("DOMContentLoaded", getIpAndLocation);
+      const longUrlInput = document.getElementById("longUrl");
+      const customAliasInput = document.getElementById("customAlias");
+      const shortLinkInput = document.getElementById("short_link");
+      const copyButton = document.getElementById("copyButton");
+      const validationMessage = document.createElement("p");
+      validationMessage.style.color = "red";
 
-      document
-        .getElementById("shortLinkForm")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
+      // URL validation function
+      const isValidUrl = (url) =>
+        /^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(\/[^\s]*)?$/.test(url);
 
-          const longUrl = document.getElementById("longUrl").value;
-          const customAlias = document.getElementById("customAlias").value;
-          const ipAddress = document.getElementById("ipAddress").value;
-          const location = document.getElementById("location").value;
+      // Generate random alias
+      const generateRandomAlias = () =>
+        Math.random().toString(36).substring(2, 8);
 
-          console.log("Long URL:", longUrl);
-          console.log("Custom Alias:", customAlias);
-          console.log("IP Address:", ipAddress);
-          console.log("Location:", location);
+      // Update short link and handle button state
+      const updateShortLink = () => {
+        const longUrl = longUrlInput.value.trim();
+        let customAlias = customAliasInput.value.trim();
 
-          // Placeholder for backend API call to generate the short link
-          alert("Short link generated successfully!");
-        });
+        if (isValidUrl(longUrl)) {
+          customAlias = customAlias || generateRandomAlias();
+          shortLinkInput.value = `https://f-t.co/${customAlias}`;
+          shortLinkInput.disabled = false;
+          shortLinkInput.style.userSelect = "none"; // Disable text selection
+          copyButton.disabled = false; // Enable the copy button
+          validationMessage.textContent = ""; // Clear validation message
+        } else {
+          shortLinkInput.value = "";
+          shortLinkInput.disabled = true;
+          shortLinkInput.style.userSelect = "none"; // Disable text selection
+          copyButton.disabled = true; // Disable the copy button
+          validationMessage.textContent = "Please enter a valid URL.";
+          longUrlInput.parentNode.appendChild(validationMessage); // Display validation message
+        }
+      };
+
+      longUrlInput.addEventListener("input", updateShortLink);
+      customAliasInput.addEventListener("input", updateShortLink);
+
+      // Copy short link to clipboard with SweetAlert2 and send data to API
+      copyButton.addEventListener("click", async () => {
+        const shortLink = shortLinkInput.value;
+        const longUrl = longUrlInput.value.trim();
+        const customAlias = customAliasInput.value.trim();
+
+        if (shortLink) {
+          try {
+            // Send data to /api/create-link.js
+            const response = await fetch("/api/create-link.js", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                longUrl,
+                customAlias,
+                shortLink,
+                ipAddress: document.getElementById("ipAddress").value,
+                location: document.getElementById("location").value,
+              }),
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+              Swal.fire({
+                icon: "success",
+                title: "Link copied to clipboard!",
+                showConfirmButton: false,
+                timer: 1500,
+              });
+            } else {
+              Swal.fire({
+                icon: "error",
+                title: "Error",
+                text: result.message || "There was an issue creating the link.",
+              });
+            }
+          } catch (error) {
+            Swal.fire({
+              icon: "error",
+              title: "Error",
+              text: "An error occurred while creating the link.",
+            });
+            console.error("Error sending data to API:", error);
+          }
+
+          // Copy the short link to clipboard
+          navigator.clipboard.writeText(shortLink).then(() => {
+            Swal.fire({
+              icon: "success",
+              title: "Link copied to clipboard!",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+          });
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "No link to copy!",
+            text: "Please generate a valid short link first.",
+          });
+        }
+      });
     </script>
   </body>
 </html>
