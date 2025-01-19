@@ -42,7 +42,7 @@
       async function fetchUsers() {
         try {
           // Fetch data from the API
-          const response = await fetch("/api/users"); // Update this path if necessary
+          const response = await fetch("/api/get-user");
           if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
           }
